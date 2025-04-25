@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import MatchCard from "./matchcard.jsx";
 
 function NbaApiCall({date}) {
     const [gamesData, setGamesData] = useState(null);
@@ -19,7 +20,7 @@ function NbaApiCall({date}) {
             try {
                 setLoading(true);
                 const response = await fetch(url, options);
-                const result = await response.json(); // Using json() instead of text() for structured data
+                const result = await response.json();
                 setGamesData(result);
                 setLoading(false);
             } catch (error) {
@@ -30,14 +31,15 @@ function NbaApiCall({date}) {
         };
 
         fetchNbaData();
-    }, []);
+    }, [date]);
 
     if (loading) return <div>Loading NBA data...</div>;
     if (error) return <div>Error: {error}</div>;
 
     return (
         <div>
-            <pre>{JSON.stringify(gamesData, null, 2)}</pre>
+            {gamesData && gamesData.response && gamesData.response.length > 0 ? (
+                <div>{gamesData.response.map((game) => (<MatchCard key={game.id} game={game}/>))}</div>) : (<div>No games found</div>)}
         </div>
     );
 }
