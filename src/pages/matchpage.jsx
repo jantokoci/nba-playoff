@@ -2,10 +2,13 @@ import { useLocation, useNavigate } from "react-router";
 import logoData from "../assets/logo-data.js";
 import "../styles/matchpage.css";
 
+
 function MatchPage() {
     const location = useLocation();
     const navigate = useNavigate();
     const game = location.state?.game;
+
+
 
     if (!game) {
         return (

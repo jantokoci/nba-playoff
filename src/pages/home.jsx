@@ -19,7 +19,7 @@ function Home(){
 
 
     return(
-        <>
+        <><div className="home-page-container">
             <div className="title-container">
                 <h1 className="home-title">Search For an NBA Match by Date</h1>
             </div>
@@ -30,6 +30,7 @@ function Home(){
             <div>
                 {show && <NbaApiCall date={date}/>}
             </div>
+        </div>
         </>
     )
 }
