@@ -1,0 +1,134 @@
+.match-page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.back-button {
+    background-color: #1d428a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background-color: #c8102e;
+}
+
+.match-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.match-header h1 {
+    color: #1d428a;
+    margin-bottom: 10px;
+}
+
+.match-date-time {
+    color: #666;
+}
+
+.teams-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.team-logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+}
+
+.team h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.team-score {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #c8102e;
+}
+
+.vs-container {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.match-details {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.match-details h3 {
+    margin-bottom: 15px;
+    color: #1d428a;
+}
+
+.quarters {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.quarter-header, .quarter-row {
+    display: grid;
+    grid-template-columns: 2fr repeat(6, 1fr);
+    text-align: center;
+    padding: 10px 0;
+}
+
+.quarter-header {
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+}
+
+.quarter-row {
+    border-bottom: 1px solid #ddd;
+}
+
+.quarter-row:last-child {
+    border-bottom: none;
+}
+
+.no-match-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.no-match-container h2 {
+    margin-bottom: 20px;
+    color: #c8102e;
+}
+
+
+    .team {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .vs-container {
+        margin: 10px 0;
+    }
+
+    .quarter-header, .quarter-row {
+        grid-template-columns: 2fr repeat(6, 1fr);
+        font-size: 0.8rem;
+    }
+
