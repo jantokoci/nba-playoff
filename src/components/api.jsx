@@ -33,6 +33,7 @@ function NbaApiCall({date}) {
         fetchNbaData();
     }, [date]);
 
+
     if (loading) return <div>Loading NBA data...</div>;
     if (error) return <div>Error: {error}</div>;
 
