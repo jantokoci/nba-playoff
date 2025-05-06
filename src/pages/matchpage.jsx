@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router-dom";
 import logoData from "../assets/logo-data.js";
 import "../styles/matchpage.css";
 
