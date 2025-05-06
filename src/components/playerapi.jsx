@@ -1,37 +1,16 @@
 import {useEffect, useState} from "react";
 import "../styles/search.css";
+import PlayerCard from "./playercard.jsx";
 
-function PlayerFinder() {
-    const [player, setPlayer] = useState('');
+
+function PlayerFinder({name}) {
     const [loading, setLoading] = useState(false);
     const [playerData, setPlayerData] = useState(null);
-    const [click, setClick] = useState(false);
 
-    // async function fetchPlayerData() {
-    //     try {
-    //         setLoading(true);
-    //         const response = await fetch(`http://rest.nbaapi.com/api/PlayerDataTotals/query?playerName=${player}&season=2025&sortBy=PlayerName&ascending=true&pageNumber=1&pageSize=10`);
-    //         const data = await response.json();
-    //
-    //         if(data){
-    //             setLoading(false);
-    //             setPlayerData(data);
-    //             setPlayer('');
-    //         }
-    //     } catch (error) {
-    //         setLoading(false);
-    //         console.log(error);
-    //     }
-    // }
-
-    function handleSubmit() {
-        // fetchPlayerData();
-        setClick(!click);
-    }
 
     useEffect(() => {
         const fetchPlayerData = async () => {
-            const url = `http://rest.nbaapi.com/api/PlayerDataTotals/query?playerName=${player}&season=2025&sortBy=PlayerName&ascending=true&pageNumber=1&pageSize=10`;
+            const url = `http://rest.nbaapi.com/api/PlayerDataTotals/query?playerName=${name}&season=2025&sortBy=PlayerName&ascending=true&pageNumber=1&pageSize=10`;
 
 
             try {
@@ -39,7 +18,6 @@ function PlayerFinder() {
                 const response = await fetch(url);
                 const result = await response.json();
                 setPlayerData(result);
-                setPlayer('');
                 setLoading(false);
             } catch (error) {
                 console.error(error);
@@ -47,7 +25,7 @@ function PlayerFinder() {
             }
         }
         fetchPlayerData()
-        },[click])
+        },[name])
 
     if(loading){
         return <div>Loading...</div>
@@ -55,13 +33,8 @@ function PlayerFinder() {
 
     return(
         <div>
-            <div className="input-wrapper">
-                <input className="searchbar" name="search" type="text" placeholder="Search for an NBA Player" value={player} onChange={(e) => setPlayer(e.target.value)}/>
-                <button className="searchbutton" onClick={handleSubmit}>Search</button>
-            </div>
-            {
-                playerData !== null ? console.log(playerData) : <p>no data</p>
-            }
+            {playerData && playerData.length  > 0 ? (
+                <div>{playerData.map((playerer) => (<PlayerCard key={playerer.id} player={playerer}/>))}</div>) : (<div>No player found</div>)}
         </div>
     );
 }

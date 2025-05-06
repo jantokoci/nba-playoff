@@ -1,6 +1,6 @@
 import GetMatchByDate from "./getmatchbydate.jsx";
 import Tabs from "./tab.jsx";
-import PlayerFinder from "./playerapi.jsx";
+import GetName from "./getnameshow.jsx";
 
 function MultiTab() {
 
@@ -11,7 +11,7 @@ function MultiTab() {
         },
         {
             label: 'Search Player',
-            content: <PlayerFinder />
+            content: <GetName />
         }
     ]
 
