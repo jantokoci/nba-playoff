@@ -3,14 +3,14 @@ import "../styles/search.css";
 import PlayerCard from "./playercard.jsx";
 
 
-function PlayerFinder({name}) {
+function PlayerFinder({name, season}) {
     const [loading, setLoading] = useState(false);
     const [playerData, setPlayerData] = useState(null);
 
 
     useEffect(() => {
         const fetchPlayerData = async () => {
-            const url = `http://rest.nbaapi.com/api/PlayerDataTotals/query?playerName=${name}&season=2025&sortBy=PlayerName&ascending=true&pageNumber=1&pageSize=10`;
+            const url = `http://rest.nbaapi.com/api/PlayerDataTotals/query?playerName=${name}&season=${season}&sortBy=PlayerName&ascending=true&pageNumber=1&pageSize=10`;
 
 
             try {

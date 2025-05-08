@@ -6,11 +6,12 @@ function GetName(){
 
     const [show, setShow] = useState(false);
     const [name, setPlayer] = useState("");
+    const [season, setSeason] = useState("2025");
 
     function handleSubmit(){
-        setShow(true);
+        setShow(!show);
         setPlayer(document.getElementById("name").value);
-        //setPlayer("");
+        setSeason(document.getElementById("season").value);
     }
 
     console.log(name)
@@ -20,9 +21,15 @@ function GetName(){
         <div className="input-wrapper">
             <input className="searchbar" id="name" name="search" type="text" placeholder="Search for an NBA Player"/>
             <button className="searchbutton" onClick={handleSubmit}>Search</button>
+            <select id="season" name="Season" className="season-select">
+                <option value="2025" selected>2025</option>
+                <option value="2024">2024</option>
+                <option value="2023" >2023</option>
+                <option value="2022">2022</option>
+            </select>
         </div>
         <div>
-            {show && <PlayerFinder name={name} />}
+            {show && <PlayerFinder name={name} season={season}/>}
         </div>
         </>
     );
