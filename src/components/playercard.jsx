@@ -6,17 +6,19 @@ function PlayerCard({player}){
 
     return (
         <>
+            <div className="player-card-container">
             <div className="card">
                 <div>
                     {playerImage.map(item => (item.name === playerName) ? (<img key={item.url} src={item.image} className="card-image" alt="avatar" />) : null)}
                     <p className="card-title">{playerName}</p>
                     <p className={"card-text"}>age: {age}</p>
                 </div>
-                <div>
-                    <p className={"card-text"}>team: {position}</p>
+                <div className="card-info">
+                    <p className={"card-text"}>position: {position}</p>
                     <p className={"card-text"}>team: {team}</p>
                     <p className={"card-text"}>games in this season: {games}</p>
                 </div>
+            </div>
             </div>
         </>
     )

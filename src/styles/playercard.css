@@ -1,29 +1,54 @@
-.card{
-    border: 1px solid rgba(121, 121, 121, 0.329);
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+.player-card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Törés engedélyezése */
+    gap: 20px; /* Nagyobb távolság a kártyák között */
     padding: 20px;
-    margin: 10px;
-    text-align: center;
-    max-width: 250px;
-    display: inline-block;
-    background-color: #696969;
+    background-color: #f4f4f4;
 }
 
-.card .card-title{
-    font-family: Arial, sans-serif;
-    margin: 0;
-    color: hsl(0, 0%, 0%);
+.card {
+    flex: 0 0 calc(25% - 20px); /* Négy kártya egy sorban, figyelembe véve a gap-et */
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Központosított tartalom */
 }
 
-.card .card-text{
-    font-family: Arial, sans-serif;
-    color: hsl(0, 0%, 100%);
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
-.card .card-image{
-    max-width: 60%;
-    height: auto;
+.card .card-image {
+    max-width: 100px;
+    height: 100px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin: 0 auto 15px; /* Középre igazítás */
+    object-fit: cover;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.card .card-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #222222;
+    margin: 10px 0;
+}
+
+.card .card-info {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.card .card-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #666666;
+    margin: 5px 0;
+    line-height: 1.6;
 }

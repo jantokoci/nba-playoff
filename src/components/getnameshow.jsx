@@ -28,7 +28,7 @@ function GetName(){
                 <option value="2022">2022</option>
             </select>
         </div>
-        <div>
+        <div className="helohelo">
             {show && <PlayerFinder name={name} season={season}/>}
         </div>
         </>
