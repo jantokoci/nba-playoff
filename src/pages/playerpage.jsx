@@ -39,7 +39,7 @@ export default function PlayerPage() {
     const blocks = player.blocks
     const team = player.team;
 
-    const gameminutes = games*48;
+
 
 
     const rpg = (offRb+defRb)/games;
@@ -91,7 +91,7 @@ export default function PlayerPage() {
                                 <td>Two Pointers</td>
                                 <td>{two}</td>
                                 <td>-</td>
-                                <td>{100*((two/twoA).toFixed(2))}%</td>
+                                <td>{100*((two/twoA).toFixed(1))}%</td>
                             </tr>
                             <tr>
                                 <td>Three Pointers</td>
@@ -132,7 +132,7 @@ export default function PlayerPage() {
                             <tr>
                                 <td>Minutes</td>
                                 <td>{minutesTotal}</td>
-                                <td>{(gameminutes/minutesTotal).toFixed(2)} MINS</td>
+                                <td>{(minutesTotal/games).toFixed(1)} MINUTES</td>
                                 <td>-</td>
                             </tr>
                             </tbody>
