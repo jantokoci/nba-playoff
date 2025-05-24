@@ -1,0 +1,106 @@
+.player-page-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.player-page-picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    position: relative;
+}
+
+.player-page-picture:nth-child(2) {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: auto;
+    z-index: 2;
+}
+
+.player-picture {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #1d428a;
+    position: relative;
+}
+
+.card-image {
+    width: 80px;
+    height: 80px;
+}
+
+.player-page-basics {
+    width: 40%;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.player-page-basics h1 {
+    color: #1d428a;
+    margin-bottom: 15px;
+    font-size: 2.2rem;
+}
+
+.player-page-basics p {
+    color: #666;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.no-player-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.no-player-container h2 {
+    margin-bottom: 20px;
+    color: #c8102e;
+}
+
+.no-player-container button {
+    background-color: #1d428a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.no-player-container button:hover {
+    background-color: #c8102e;
+}
+
+@media (max-width: 768px) {
+    .player-page-header {
+        flex-direction: column;
+    }
+    
+    .player-page-picture, 
+    .player-page-basics {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .player-page-basics {
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    .player-page-picture:nth-child(2) {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}

@@ -25,14 +25,14 @@ function PlayerFinder({name, season}) {
             }
         }
         fetchPlayerData()
-        },[name])
+        },[name, season])
 
     if(loading){
         return <div>Loading...</div>
     }
 
     return(
-        <div>
+        <div className="player-cards-container">
             {playerData && playerData.length  > 0 ? (
                 <div>{playerData.map((playerer) => (<PlayerCard key={playerer.id} player={playerer}/>))}</div>) : (<div>No player found</div>)}
         </div>
