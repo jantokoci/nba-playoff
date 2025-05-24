@@ -7,6 +7,7 @@
     padding: 20px;
     border-radius: 8px;
     position: relative;
+    flex-wrap: wrap;
 }
 
 .player-page-picture {
@@ -58,6 +59,80 @@
     font-size: 1.1rem;
 }
 
+/* Statisztikai táblázat stílusok */
+.player-page-stats {
+    width: 100%;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.player-page-stats h2 {
+    color: #1d428a;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.stats-table th, 
+.stats-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.stats-table th {
+    background-color: #1d428a;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stats-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.stats-table tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.2s ease;
+}
+
+.stats-table td:first-child {
+    font-weight: bold;
+    text-align: left;
+    color: #333;
+}
+
+.stats-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Kiemelkedő statisztikák */
+.stats-table tr td:nth-child(2) {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #c8102e;
+}
+
+.stats-table tr td:nth-child(3) {
+    color: #006BB6;
+    font-weight: 500;
+}
+
 .no-player-container {
     text-align: center;
     margin-top: 100px;
@@ -76,6 +151,7 @@
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .no-player-container button:hover {
@@ -102,5 +178,34 @@
         position: absolute;
         top: 10px;
         right: 10px;
+    }
+    
+    .stats-table {
+        font-size: 0.9rem;
+    }
+    
+    .stats-table th, 
+    .stats-table td {
+        padding: 8px 10px;
+    }
+    
+    .player-page-stats {
+        padding: 10px;
+    }
+    
+    .player-page-stats h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-table th, 
+    .stats-table td {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .player-page-stats h2 {
+        font-size: 1.3rem;
     }
 }
